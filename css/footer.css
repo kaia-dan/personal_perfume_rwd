@@ -1,0 +1,11 @@
+/* 푸터영역시작 */
+div#footer_wrap{
+  width:100%; height:300px;
+  float:left;
+  background:#5d0b6c;
+}
+div#footer_inner{
+  width:1200px; height:100%;
+  margin:0px auto;
+}
+/* 푸터영역끝 */

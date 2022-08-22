@@ -1,0 +1,194 @@
+/* 비쥬얼영역시작 */
+section#visual_wrap{
+  width:100%; position:relative; left:0px; top:0px; float:left;
+  overflow:hidden; background:white; 
+}
+div#visual_inner{
+  width:1200px; margin:0px auto;
+  position:relative; left:0px; top:0px;  
+}
+ul#visual_list{
+  width:3600px; float:left; position:relative; left:50%; margin-left:-1800px;
+}
+ul#visual_list li{
+  width:33.33%; float:left;
+}
+ul#visual_list li img{
+  width:100%;
+}
+/* 비쥬얼영역끝 */
+
+/* 비쥬얼네비게이터영역시작 */
+ul#slide_gather{
+  width:120px; height:20px; position:absolute; left:50%; margin-left:-60px;
+  bottom:70px;
+}
+ul#slide_gather>li{
+  width:5px; height:5px; border-radius:50%; border:solid 1px #5d0b6c;
+  margin-right:20px; float:left; text-indent:-9999px;/*텍스트 날리려고 텍스트인덴트*/
+}
+ul#slide_gather>li.selected{
+  width:5px; background:#5d0b6c;
+}
+ul#slide_gather>li:last-child{
+  margin-right:0px;
+}
+/* 비쥬얼네비게이터영역끝 */
+
+/* 컨텐츠_servise영역시작 */
+div#contents_wrap_all{
+  width:100%; min-height:2500px; float:left; background:#eeeeee;
+}
+div#contents_service_wrap{
+  width:100%; height:1468px; float:left;
+  /* background:red; */
+}
+section#contents_service_inner{
+  width:1200px; height:100%;
+  margin:0px auto; position:relative; left:0px; top:0px;
+  /* background:rgb(217, 255, 0); */
+}
+p#contents_title_small{
+  width:100%;
+  float:left; margin-top:48px; text-align:center;
+  font:normal 24px "Noto Sans";
+}
+p#contents_title_big{
+  width:100%;
+  float:left; margin-top:20px; margin-bottom:52px;
+  text-align:center;
+  font:bold 48px "Noto Sans";
+}
+ul#contents_service_list{
+  width:1200px; height:auto; 
+  margin:0px auto; float:left; 
+  /* background: rgb(255, 0, 128); */
+}
+ul#contents_service_list li{
+  width:30%; height:auto; position:relative; left:0px; top:0px;
+  float:left; margin-right:5%; margin-bottom:90px;
+  /* background: rgb(255, 255, 255); */
+}
+ul#contents_service_list li:nth-child(2){
+  position:relative; left:0px; top:150px;
+}
+ul#contents_service_list li:nth-child(3n){
+  position:relative; left:0px; top:50px; 
+  margin-right:0px;
+}
+ul#contents_service_list li:nth-child(5){
+  position:relative; left:0px; top:150px;
+}
+p.contents_img{
+  width:100%; height:auto;
+}
+p.contents_img img{
+  width:100%; height:100%;
+}
+p.contents_text_big{
+  width:100%; height:20px;
+  margin:30px auto; text-align:center;
+  font:bold 18px/20px "Noto Sans";
+}
+P.contents_text_small{
+  width:100%;
+  margin:0px auto; text-align:center;
+  font:normal 12px/18px "Noto Sans KR";
+}
+/* 컨텐츠_servise영역끝 */
+
+/* 컨텐츠_movie영역시작 */
+div#movie_wrap{
+  width:100%; height:950px; float:left;
+  /* background:green; */
+}
+div#movie_wrap::before{
+  content:"";
+  width:30%; height:85%; float:right; background:#5d0b6c;
+  display:block; position:relative; right:0px; top:0px;
+}
+div#movie_inner{
+  width:1200px; height:100%;
+  margin:0px auto; position:relative; left:0px; top:0px;
+  /* background: rgb(215, 160, 255); */
+}
+p#movie_title{
+  /* width:800px; height:72px; float:left; background: red; */
+  position:absolute; left:0px; top:153px;
+  font:bold 72px "Noto Sans"; 
+  color:#5d0b6c;
+}
+div#movie{
+  width:100%; height:720px;
+  position:relative; left:0px; top:230px; 
+  /* background: rgb(0, 255, 42); */
+}
+div#movie img{
+  width:100%; height:auto; float:left; 
+  position:absolute; left:0px; top:0px;
+}
+/* embed#make_movie{
+  width:100%; height:100%; position:absolute; left:0px; top:-450px;
+} */
+/* embed::before{
+  content:"HOW IT'S MADE";
+  font:bold 72px "Noto Sans";
+  
+} */
+/* 컨텐츠_movie영역끝 */
+
+/* 컨텐츠_SCENT DIAGNOSIS영역시작 */
+div#contents_diagnosis_wrap{
+  width:100%; height:1430px; float:left;
+  /* background:rgb(231, 216, 80); */
+}
+div#contents_diagnosis_inner{
+  width:1200px; height:100%; 
+  margin:0px auto; 
+  position:relative; left:0px; top:0px;
+}
+p#contents_diagnosis_title{
+  width:100%; height:0px;
+  float:left;
+  position:relative; top:143px;
+  text-align:center;
+  font:bold 48px "Noto Sans";
+  /* background: red; */
+}
+ul#contents_diagnosis_list{
+  width:768px; height:768px;
+  position:relative; left:0px; top:285px; margin:0px auto;
+  /* background:red; */
+}
+ul#contents_diagnosis_list li{
+  width:50%; height:50%; float:left; 
+  margin:0px auto;
+  background:#460b6c;
+  border-radius:50%;
+}
+ul#contents_diagnosis_list li:nth-child(2){
+  background:#5d0b6c;
+}
+ul#contents_diagnosis_list li:nth-child(3){
+  background:#c8964e;
+}
+ul#contents_diagnosis_list li:nth-child(4){
+  background:#7f398c;
+}
+p.contents_diagnosis_text{
+  width:290px;
+  margin:0px auto; margin-top:155px;
+  font:normal 18px/27px "Noto Sans KR"; text-align:center; color:white;
+  /* background: rgb(0, 0, 0); */
+}
+p#myperfumemake_text{
+  width:170px;
+  /* background: red; */
+  margin:350px auto;
+  font:normal 16px "Noto Sans KR";
+}
+p#myperfumemake_text a{
+  text-decoration:none;
+  font:normal 16px "Noto Sans KR"; color:black;
+}
+/* 컨텐츠_SCENT DIAGNOSIS영역끝 */

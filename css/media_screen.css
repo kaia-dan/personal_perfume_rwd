@@ -1,0 +1,132 @@
+@media screen and (max-width:1200px){
+  div#topmenu_inner,header#header_inner,div#visual_inner,
+  section#contents_service_inner,div#movie_inner,div#contents_diagnosis_inner,
+  div#contents_personal_inner,div#contents_diagnisis_inner,
+  div#contents_sent_diagnosis_inner,div#footer_inner{
+    width:100%;
+  }
+  ul#visual_list{
+    width:300%; margin-left:-150%;
+  }
+  ul#contents_service_list{
+    width:100%; 
+  }
+  ul#contents_service_list li{
+    width:31%;
+    margin-right:3.5%;
+  }
+}
+
+@media screen and (max-width:980px){
+  ul#contents_service_list li{
+    width:45%;
+    margin-right:10%;
+  }
+  div#contents_service_wrap{
+    height:2129px;
+  }
+  section#contents_service_inner{
+    height:3000px;
+  }
+  ul#contents_service_list li:nth-child(2n){
+    top:0px; margin-right:0%;
+  }
+  ul#contents_service_list li:nth-child(3){
+    top:0px; margin-right:10%;
+  }
+  ul#contents_service_list li:nth-child(5){
+    top:0px;
+  }
+  ul#contents_service_list li:nth-child(6){
+    top:0px;
+  }
+  div#movie_wrap::before{
+    display:none;
+  }
+  p#movie_title{
+    top:0px;
+  }
+  div#movie_wrap{
+    height:700px;
+  }
+  div#movie{
+    height:623px; top:77px;
+  }
+  div#contents_personal_wrap{
+    height:2400px;
+  }
+  li.diagnisis{
+    margin:20px auto;
+  }
+  p.diagnisis_text{
+    font-size:16px;
+  }
+  p#button_img{
+    margin:0px auto;
+  }
+}
+
+@media screen and (max-width:768px){
+  nav#topmenu,nav#mainmenu{
+    display:none;
+  }
+  nav#mobilemenu{
+    display:block;
+  }
+  div#contents_diagnosis_wrap{
+    height:1130px;
+  }
+  div#movie_wrap{
+    height:600px;
+  }
+  div#movie{
+    height:523px;
+  }
+  ul#contents_diagnosis_list{
+    width:100%;height:600px;
+  }
+  ul#contents_diagnosis_list li{
+    width:100%; height:200px;
+    border-radius:unset;
+  }
+  p.contents_diagnosis_text{
+    width:80%;
+    margin-top:70px;
+  }
+  ul#contents_diagnosis_list li:nth-child(3){
+    display: none;
+  }
+  p.tip_img,p.tip_text{
+    width:100%;
+  }
+  p.personal_title{
+    margin-top:0px;
+  }
+  p#diagnisis_visual_img{
+    display:none;
+  }
+  ul#diagnisis_list{
+    float: none; margin: 0px auto;
+  }
+}
+
+@media screen and (max-width:480px){
+  ul#contents_service_list li{
+    width:100%;
+  }
+  div#contents_service_wrap{
+    height:4500px;
+  }
+  section#contents_service_inner{
+    height:4500px;
+  }
+}
+
+@media screen and (max-width:320px){
+  div#contents_service_wrap{
+    height:3700px;
+  }
+  div#contents_service_inner{
+    height:3700px;
+  }
+}

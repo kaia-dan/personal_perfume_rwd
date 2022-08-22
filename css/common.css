@@ -1,0 +1,137 @@
+/* 기본설정시작 */
+.hidden{
+  width:1px; height:1px; font-size:0px; line-height:0px;
+  position:absolute;
+}
+ul#skipmenu_list li a{
+  width:1px; height:1px; font-size:0px; line-height:0px;
+  position:absolute; z-index:99999;
+}
+ul#skipmenu_list li a:focus{
+  width:100%; height:35px; font-size:14px; line-height:35px;
+  background:black; color:white; text-align:center; text-decoration:none;
+}
+/* 기본설정끝 */
+
+/* 헤더영역시작 */
+div#header_wrap{
+  width:100%; height:180px; float:left; position:relative; left:0px; top:0px; z-index:10; 
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5d0b6c+0,5d0b6c+16,ffffff+16,ffffff+100,ffffff+100 */
+  background: #5d0b6c; /* Old browsers */
+  background: -moz-linear-gradient(top,  #5d0b6c 0%, #5d0b6c 16%, #ffffff 16%, #ffffff 100%, #ffffff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #5d0b6c 0%,#5d0b6c 16%,#ffffff 16%,#ffffff 100%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #5d0b6c 0%,#5d0b6c 16%,#ffffff 16%,#ffffff 100%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5d0b6c', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+header#header_inner{
+  width:1200px; height:100%;
+  margin:0px auto; position:relative; left:0px; top:0px; 
+}
+h1#logo{
+  width:109px; height:56px; 
+  position:absolute; left:50%; margin-left:-54px; top:59px;
+}
+nav#topmenu{
+  width:110px; height:14px; 
+  position:absolute; right:0px; top:6px;
+}
+ul#topmenu_list{
+  width:100%; height:100%; float:left; 
+}
+ul#topmenu_list li{
+  float:left; line-height:14px; margin-right:18px; 
+  position:relative; left:0px; top:0px;
+}
+ul#topmenu_list li:last-child{
+  margin-right:0px;
+}
+ul#topmenu_list li a{
+  font:normal 14px/14px "Noto Sans"; color:white; text-decoration:none;
+}
+nav#mainmenu{
+  width:70%; height:25px; 
+  position:absolute; left:50%; margin-left:-35%; bottom:0px; 
+  margin-bottom:10px;
+}
+/* flex 속성적용 */
+/* ul#mainmenu_list{
+  width:100%; height:100%; float:left;
+  display:flex;
+  flex-wrap:nowrap; flex-direction:row;
+  justify-content:space-between;
+} */
+/* flex속성적용 끝 */
+
+/* 하드코딩 코드 */
+ul#mainmenu_list{
+  width:100%; height:100%; float:left;
+}
+ul#mainmenu_list>li{
+  width:20%; height:100%;
+  position:relative; left:0px; top:0px;
+  float:left; text-align:center;
+  /* border-bottom:solid 2px #5e0b6cb0; */
+}
+ul#mainmenu_list>li>a{
+  font:normal 16px "Noto Sans KR"; color:#4e4e4e; text-decoration:none;
+  -webkit-transition:0.2s ease; 
+}
+ul#mainmenu_list>li>a:hover{
+  color:#5d0b6c;
+  font-weight:bold;
+}
+ul#mainmenu_list>li>a::before{
+  content:"";
+  width:7px; height:7px; 
+  border-radius:50%; background:#5d0b6c;
+  position:absolute; top:0px; opacity:0;
+  -webkit-transition:0.2s ease; 
+}
+ul#mainmenu_list>li>a:hover::before{
+  top:-7px; opacity:1
+}
+
+/* 하드코딩 코드끝 */
+
+
+
+
+
+/* 뎁스영역시작 */
+ul.submenu_list{
+  width:110px; height:auto; 
+  opacity:0; display:none;
+  background:#5e0b6c;
+  border-radius:30% 10% ;
+  position:absolute; left:50%; margin-left:-55px; top:50px;
+
+}
+ul.submenu_list>li{
+  position:relative; left:0px; top:5px;
+  line-height:21px;
+  text-align: center;
+  display:block;
+}
+ul.submenu_list>li:last-child{
+  margin-bottom:15px;
+}
+ul.submenu_list>li>a{
+  font-size:12px !important; color: #ffffff;
+  text-decoration:none; 
+  text-align:center;
+
+}
+/* 뎁스영역끝 */
+
+/* ul#mainmenu_list li a{
+  font:normal 16px "Noto Sans KR"; color:#4e4e4e; text-decoration:none;
+} */
+nav#mobilemenu{
+  width:50px; height:50px; position:absolute; left:15px; top:59px;
+  display:none;
+}
+nav#mobilemenu i img{
+  width:100%; height:100%; position:relative; left:0px; top:0px;
+}
+/* 헤더영역끝 */
+
