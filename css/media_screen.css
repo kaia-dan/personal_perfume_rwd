@@ -5,9 +5,9 @@
   div#contents_sent_diagnosis_inner,div#footer_inner{
     width:100%;
   }
-  ul#visual_list{
+  /* ul#visual_list{
     width:300%; margin-left:-150%;
-  }
+  } */
   ul#contents_service_list{
     width:100%; 
   }
