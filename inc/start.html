@@ -6,14 +6,18 @@
   <link rel="stylesheet" href="/personal_perfume_rwd/css/reset.css">
   <link rel="stylesheet" href="/personal_perfume_rwd/css/common.css">  
   <link rel="stylesheet" href="/personal_perfume_rwd/css/footer.css">
-  <link rel="stylesheet" href="/personal_perfume_rwd/css/main.css">
-  <link rel="stylesheet" href="/personal_perfume_rwd/css/media_screen.css">
+
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:regular,italic,700,700italic" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,regular,500,700,900" rel="stylesheet" />
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js "></script>
   <script>
     document.addEventListener('DOMContentLoaded',()=>{
+      navigationEffect()
+      contentsEffect()
+    })
+//navigationEffect 시작
+    function navigationEffect(){
      
       const mainMenu=document.querySelectorAll('#mainmenu_list>li>a');
       const subMenu=document.querySelectorAll('.submenu_list');
@@ -42,7 +46,7 @@
       function mainMenuOut(){
         menuInActivate(this)        
       }
- 
+
       function menuInActivate(menu){
         if(selectedMenu!=null){         
 
@@ -54,13 +58,255 @@
       }
 
       function menuActivate(menu){        
-       
+      
           selectedMenu=menu
           let selectedSubMenu=selectedMenu.nextElementSibling;
           //alert('fdddd')
           //console.log(selectedSubMenu)
           gsap.to(selectedSubMenu,{display:'block', opacity:1, top:35, duration:0.3, ease:'power1.out'})
       }
-     
+    }
+
+//contentsEffect 시작
+    function contentsEffect(){
+
+      const contentsList=document.querySelectorAll('#contents_service_list>li')
+      const contentsImg=document.querySelectorAll('.contents_img>img')
+      const movieBg=document.querySelector('.movie_wrap')
+      const movieTitle=document.querySelector('#movie_title')
+      const perfumeImg=document.querySelector('#perfume_icon')
+      const diagnosisList=document.querySelectorAll('#contents_diagnosis_list>li')
+      // alert(contentsList.length)
+
+      
+
+//contents 이미지 마우스오버효과 스크립트
+      for(const item of contentsImg){
+        item.addEventListener('mouseenter',imgOver)
+        item.addEventListener('mouseleave',imgOut)
+
+        gsap.to(contentsImg,{scale:'1.1'})
+      }
+
+      function imgOver(){
+        gsap.to(this,{scale:'1'})
+      }
+
+      function imgOut(){
+        gsap.to(this,{scale:'1.1'})
+      }
+        
+//scroll속성 스크립트
+      window.addEventListener('scroll',windowScroll)
+      // window.addEventListener('scroll',windowScrollSecond)
+
+      function windowScroll(){
+
+        let scrollHeight=window.pageYOffset
+
+//6개contents스크립트
+        if(scrollHeight>=400){
+          gsap.set(contentsList[0],{display:'block'})
+          gsap.to(contentsList[0],{opacity:1, top:0, duration:1, ease:'power1.out'})
+        }
+
+        if(scrollHeight>=600){
+          gsap.set(contentsList[1],{display:'block'})
+          gsap.to(contentsList[1],{opacity:1, top:150, duration:1, ease:'power1.out'})
+        }
+        
+        if(scrollHeight>=800){
+          gsap.set(contentsList[2],{display:'block'})
+          gsap.to(contentsList[2],{opacity:1, top:50, duration:1, ease:'power1.out'})
+        }
+
+        if(scrollHeight>=1050){
+          gsap.set(contentsList[3],{display:'block'})
+          gsap.to(contentsList[3],{opacity:1, top:0, duration:1, ease:'power1.out'})
+        }
+
+        if(scrollHeight>=1250){
+          gsap.set(contentsList[4],{display:'block'})
+          gsap.to(contentsList[4],{opacity:1, top:150, duration:1, ease:'power1.out'})
+        }
+
+        if(scrollHeight>=1450){
+          gsap.set(contentsList[5],{display:'block'})
+          gsap.to(contentsList[5],{opacity:1, top:50, duration:1, ease:'power1.out'})
+        }
+       
+//movieBg 슬라이드효과 스크립트
+        if(scrollHeight>=2000){
+          //alert('test')
+          movieBg.classList.add('movie_wrap_selected')
+        }
+
+//how it's made title 스크립트
+        let positionWidth
+
+        if(scrollHeight>=1600 && scrollHeight<=2300){
+          positionWidth=(scrollHeight-2300)/1.7
+        }else{
+          positionWidth=0
+        }
+        gsap.set(movieTitle,{left:positionWidth})
+
+//how it's made After 향수이미지 스크립트
+        if(scrollHeight>=2400){
+          perfumeImg.classList.add('afterEffect')
+        }else{
+          perfumeImg.classList.remove('afterEffect')
+        }
+
+//scent diagnosis 내용 스크립트 
+        if(scrollHeight>=2900){
+          gsap.set(diagnosisList[0],{display:'block'})
+          gsap.to(diagnosisList[0],{opacity:1, duration:1.5, ease:'power1.out'})
+        }
+        
+        if(scrollHeight>=3100){
+          gsap.set(diagnosisList[1],{display:'block'})
+          gsap.to(diagnosisList[1],{opacity:1, duration:1.5, ease:'power1.out'})
+        }
+
+        if(scrollHeight>=3300){
+          gsap.set(diagnosisList[2],{display:'block'})
+          gsap.to(diagnosisList[2],{opacity:1, duration:1.5, ease:'power1.out'})
+        }
+
+        if(scrollHeight>=3500){
+          gsap.set(diagnosisList[3],{display:'block'})
+          gsap.to(diagnosisList[3],{opacity:1, duration:1.5, ease:'power1.out'})
+        }
+      }
+    }
+
+    window.addEventListener('load',()=>{
+
+      visualEffect()
+      scriptMediascreen()
     })
+
+//visualEffect함수시작
+      function visualEffect(){
+
+      const visualWrap=document.querySelector('#visual_wrap')
+      const visualInner=document.querySelector('#visual_inner')
+      const visualList=document.querySelector('#visual_list')
+      const visualLi=document.querySelectorAll('#visual_list>li')
+      const visualImg=document.querySelectorAll('#visual_list>li>img')
+      // const dot=document.querySelectorAll('#slide_gather>li')
+
+      let visualLength=visualLi.length
+      let visualWidth
+      let timer
+      let isSlide=false
+
+      let currentIndex=0
+      let nextIndex
+
+      // //dot 관련
+      // let dotOverNum=0 //선택닷순번!!
+      // let selectedDot 
+
+      visualReset()
+      init()
+      initEvent()
+      autoPlay()
+
+      // //dot 관련
+      // dotActivate(0) //버튼활성화
+
+
+      function init(){
+
+        gsap.set(visualLi,{opacity:0})
+        gsap.set(visualLi[0],{opacity:1})
+      }
+
+      function visualReset(){
+
+        visualWidth=visualInner.offsetWidth
+
+        gsap.set(visualLi,{width:visualWidth})
+        gsap.set(visualImg,{width:visualWidth})
+        gsap.set(visualWrap,{height:visualImg[0].offsetHeight})
+      }
+
+      function initEvent(){
+
+        window.addEventListener('resize',visualReset)
+        // visualWrap.addEventListener('mouseenter',stopAutoPlay);        
+        // visualWrap.addEventListener('mouseleave',autoPlay); 
+      }
+
+      function slideNext(){
+          
+          nextIndex=currentIndex+1
+
+          if(nextIndex>=visualLength){
+            nextIndex=0
+          }
+          gsap.to(visualLi[currentIndex],{opacity:0, duration:2, ease:'power1.out'})
+          gsap.to(visualLi[nextIndex],{opacity:1, duration:2, ease:'power1.out', onComplete:()=>{
+            isSlide=false
+          }})
+          currentIndex=nextIndex
+      }
+
+      // function slidePrev(){
+
+      //   if(isSlide==false){
+
+      //     isSlide=true
+
+      //     nextIndex=currentIndex-1
+
+      //     if(nextIndex<0){
+      //       nextIndex=visualLength-1
+      //     }
+
+      //     gsap.to(visualLi[currentIndex],{opacity:0, duration:2, ease:'power1.out'})
+      //     gsap.to(visualLi[nextIndex],{opacity:1, duration:2, ease:'power1.out', onComplete:()=>{
+      //       isSlide=false
+      //     }})
+      //     currentIndex=nextIndex
+      //   }
+      // }
+      
+      function autoPlay(){ 
+        timer=setInterval(slideNext,3000);
+      }
+    }
+
+//스크립트미디어스크린적용함수시작
+    function scriptMediascreen(){
+
+      const contentsInner=document.querySelector('#contents_service_inner')
+      const contentsLi=document.querySelectorAll('#contents_service_list>li')
+
+      let contentsWidth
+
+      contentsReset()
+      initEvent()
+
+      function contentsReset(){
+        
+        contentsWidth=contentsInner.offsetWidth
+
+        if(contentsWidth<=980){
+          for(const item of contentsLi){
+          // alert('980')
+          gsap.set(item,{top:0})
+          // alert('top:0')
+          }
+        }
+      }
+
+      function initEvent(){
+
+        window.addEventListener('resize',contentsReset)
+      }
+    }
+
   </script>
