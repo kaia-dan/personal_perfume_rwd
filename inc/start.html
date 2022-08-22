@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/personal_perfume_rwd/css/reset.css">
+  <link rel="stylesheet" href="/personal_perfume_rwd/css/common.css">  
+  <link rel="stylesheet" href="/personal_perfume_rwd/css/footer.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:regular,italic,700,700italic" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,regular,500,700,900" rel="stylesheet" />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js "></script>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+     
+      const mainMenu=document.querySelectorAll('#mainmenu_list>li>a');
+      const subMenu=document.querySelectorAll('.submenu_list');
+
+      let selectedMenu=null;
+
+      initEvent();
+
+      function initEvent(){
+        for(const item of mainMenu){
+          item.addEventListener('mouseenter',mainMenuOver)
+          item.addEventListener('focus',mainMenuOver)
+        }
+        document.querySelector('#header_inner').addEventListener('mouseleave',mainMenuOut)
+
+        const subMenu_a=document.querySelectorAll('.submenu_list>li>a')
+        subMenu_a[subMenu_a.length-1].addEventListener('focusout',mainMenuOut)
+      }
+
+      function mainMenuOver(){
+        //alert('test')
+        menuInActivate(this)
+        menuActivate(this)
+      }
+
+      function mainMenuOut(){
+        menuInActivate(this)        
+      }
+ 
+      function menuInActivate(menu){
+        if(selectedMenu!=null){         
+
+          let unSelectedMenu=selectedMenu.nextElementSibling;
+          gsap.to(unSelectedMenu,{opacity:0, top:50, duration:0.2, ease:'power1.out',onComplete:()=>{
+            unSelectedMenu.style.display='none'
+          }})
+        }
+      }
+
+      function menuActivate(menu){        
+       
+          selectedMenu=menu
+          let selectedSubMenu=selectedMenu.nextElementSibling;
+          //alert('fdddd')
+          //console.log(selectedSubMenu)
+          gsap.to(selectedSubMenu,{display:'block', opacity:1, top:35, duration:0.3, ease:'power1.out'})
+      }
+     
+    })
+  </script>
